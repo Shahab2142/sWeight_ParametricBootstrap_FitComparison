@@ -1,0 +1,40 @@
+# Use LaTeX for rendering
+text.usetex : True  # Enable LaTeX rendering
+
+# Fonts
+font.family : serif
+font.serif : Computer Modern Roman  # Default LaTeX font
+
+# Adjusted Font Sizes
+axes.titlesize : 14   # Slightly larger than the main text for prominence
+axes.labelsize : 12   # Match the main text font size
+legend.fontsize : 10  # Larger for readability
+xtick.labelsize : 10  # Match legend size
+ytick.labelsize : 10  # Match legend size
+
+
+# Figure Size
+figure.figsize : 6.3, 3.94  # Match \textwidth (6.3 inches) and keep a 16:10 ratio
+
+# DPI and file format for high-quality output
+figure.dpi : 100
+savefig.dpi : 300  # High resolution for saving figures
+savefig.format : pdf  # Use PDF for vector graphics
+savefig.bbox : tight  # Remove excess whitespace around the figure
+
+# Line Thickness
+lines.linewidth : 1.5  # Standard line width for better visibility
+lines.markersize : 4.0  # Adjust marker size for better visibility
+
+# Grid (optional for professional appearance)
+axes.grid : True
+grid.linestyle : --  # Dashed grid lines
+grid.linewidth : 0.5
+
+# Ticks (direction and size)
+xtick.direction : in  # Place ticks inward
+ytick.direction : in
+xtick.major.size : 4  # Major tick length
+ytick.major.size : 4
+xtick.minor.size : 2  # Minor tick length
+ytick.minor.size : 2

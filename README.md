@@ -14,45 +14,45 @@ This project models a two-dimensional probability distribution \(f(X, Y)\) that 
 ## **Mathematical Definition of the Model**
 
 The total probability density function \(f(X, Y)\) is a mixture of **signal** and **background** components:
-\[
+$$
 f(X, Y) = f \cdot s(X, Y) + (1 - f) \cdot b(X, Y)
-\]
+$$
 where:
 - \(f\): Fraction of the total density attributed to the **signal**.
 - \(s(X, Y)\): Signal joint PDF, which factorizes as:
-   \[
+   $$
    s(X, Y) = g_s(X) \cdot h_s(Y)
-   \]
+   $$
 - \(b(X, Y)\): Background joint PDF, which factorizes as:
-   \[
+   $$
    b(X, Y) = g_b(X) \cdot h_b(Y)
-   \]
+   $$
 
 ### **Signal PDFs**
 1. **\(g_s(X)\)**: A truncated **Crystal Ball distribution** with parameters \((\mu, \sigma, \beta, m)\), defined as:
-   \[
+   $$
    g_s(X) = 
    \begin{cases} 
    e^{-Z^2/2} & \text{for } Z > -\beta \\
    \left( \frac{m}{\beta} \right)^m e^{-\beta^2 / 2} \left( \frac{m}{\beta} - \beta - Z \right)^{-m} & \text{for } Z \leq -\beta
    \end{cases}
-   \]
+   $$
    where \(Z = \frac{X - \mu}{\sigma}\).
 
 2. **\(h_s(Y)\)**: A truncated **exponential distribution**:
-   \[
+   $$
    h_s(Y) = \lambda_s e^{-\lambda_s Y}, \quad \text{for } Y \in [0, 10].
-   \]
+   $$
 
 ### **Background PDFs**
 1. **\(g_b(X)\)**: A uniform distribution over the interval \([0, 5]\):
-   \[
+   $$
    g_b(X) = \frac{1}{5}.
-   \]
+   $$
 2. **\(h_b(Y)\)**: A truncated normal distribution with mean \(\mu_b\) and standard deviation \(\sigma_b\):
-   \[
+   $$
    h_b(Y) = \frac{1}{\sigma_b \sqrt{2\pi}} e^{-\frac{(Y - \mu_b)^2}{2\sigma_b^2}} \quad \text{truncated to } [0, 10].
-   \]
+   $$
 
 ---
 
@@ -82,9 +82,9 @@ This file performs the **extended likelihood fit** using the **`iminuit`** libra
    - The **log-sum** of the joint PDF values over all samples.
 
    The negative log-likelihood to be minimized is:
-   \[
+   $$
    \mathcal{L} = -N_{\text{expected}} + N_{\text{observed}} \log(N_{\text{expected}}) + \sum_{i} \log f(X_i, Y_i)
-   \]
+   $$
 
 - **Key Function**:
    - `perform_fit`: Performs the extended likelihood fit using the observed samples, parameter bounds, and initial guesses.
@@ -127,9 +127,9 @@ The notebook demonstrates the complete analysis pipeline:
 ## **Mathematical Background of s-Weights**
 The s-weights method projects signal contributions into the \(Y\)-dimension:
 1. Perform a fit in \(X\) to estimate the signal fraction and calculate s-weights for each sample:
-   \[
+   $$
    w_i = \frac{f \cdot g_s(X_i)}{f \cdot g_s(X_i) + (1 - f) \cdot g_b(X_i)}
-   \]
+   $$
 2. Use the s-weights as weights in a weighted likelihood fit to estimate the decay constant \(\lambda_s\) in \(Y\).
 
 ---
