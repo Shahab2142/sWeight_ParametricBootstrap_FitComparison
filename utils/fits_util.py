@@ -1,5 +1,5 @@
 from iminuit import Minuit
-from distributions_sampling import crystal_ball_normalization_truncated, f_xy_vectorized
+from utils.distributions_sampling_util import *
 import numpy as np
 
 def perform_fit(x_samples, y_samples, bounds, initial_guess, return_minuit=False):
