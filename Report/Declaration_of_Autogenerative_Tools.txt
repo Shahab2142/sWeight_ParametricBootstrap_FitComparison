@@ -1,1 +1,0 @@
-For the following project, I mainly used GitHub Copilot for generating plots, debugging, and commenting/docstringing. In some areas, I also used it to generate common functionalities. I additionally used ChatGPT and the Overleaf AI to format the mathematics and latex of the report.
