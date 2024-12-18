@@ -151,3 +151,10 @@ To run this project, you will need the following libraries:
 ## **License**
 
 This project is licensed under the MIT License.
+
+
+Declaration of Autogenerative Tools
+
+In this project, I used GitHub Copilot as a coding assistant. I mainly used it to generate the plots in part c), the table in d), and the bias and variance plots in part e) and f). I also used it within my code to create comments, docstring my functions, debug and format markdown cells explaining the different sections in the notebook.
+
+In regards to the report, I used the Overleaf AI which uses ChatGPT to help write the mathematics in latex format, and also used it to correctly format various sections of the report as I am quite new to LaTeX.
