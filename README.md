@@ -26,11 +26,13 @@ where:
 
 ### **Signal PDFs**
 1. **$g_s(X)$**: The signal distribution in $X$ follows a **Crystal Ball** function, which is a blend of a Gaussian and a power law tail. It is expressed as:
-   $$g_s(X) = 
+   $$
+   g_s(X) = 
    \begin{cases} 
-   e^{-\frac{Z^2}{2}} & \text{for } Z \geq -\beta \\
-   \left( \frac{m}{\beta} \right)^m e^{-\frac{\beta^2}{2}} \left( \frac{m}{\beta} - \beta - Z \right)^{-m} & \text{for } Z < -\beta
-   \end{cases}$$
+      e^{-\frac{Z^2}{2}} & \text{for } Z \geq -\beta \\
+      \left( \frac{m}{\beta} \right)^m e^{-\frac{\beta^2}{2}} \left( \frac{m}{\beta} - \beta - Z \right)^{-m} & \text{for } Z < -\beta
+   \end{cases}
+   $$
    where $Z = \frac{X - \mu}{\sigma}$, and $\mu$, $\sigma$, and $\beta$ are parameters defining the mean, standard deviation, and the tail exponent, respectively.
 
 2. **$h_s(Y)$**: The signal distribution in $Y$ follows a truncated **exponential distribution**:
