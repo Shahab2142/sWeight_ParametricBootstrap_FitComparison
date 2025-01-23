@@ -14,9 +14,7 @@ This project models a two-dimensional probability distribution $f(X, Y)$ that de
 ## **Mathematical Definition of the Model**
 
 The total probability density function $f(X, Y)$ is a mixture of **signal** and **background** components:
-$$
-f(X, Y) = f \cdot s(X, Y) + (1 - f) \cdot b(X, Y)
-$$
+$$f(X, Y) = f \cdot s(X, Y) + (1 - f) \cdot b(X, Y)$$
 where:
 - $f$: Fraction of the total density attributed to the **signal**.
 - $s(X, Y)$: Signal joint PDF, which factorizes as:
