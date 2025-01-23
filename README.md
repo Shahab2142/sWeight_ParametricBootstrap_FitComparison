@@ -26,32 +26,24 @@ where:
 
 ### **Signal PDFs**
 1. **$g_s(X)$**: The signal distribution in $X$ follows a **Crystal Ball** function, which is a blend of a Gaussian and a power law tail. It is expressed as:
-   $$
-   g_s(X) = 
+   $$g_s(X) = 
    \begin{cases} 
    e^{-\frac{Z^2}{2}} & \text{for } Z \geq -\beta \\
    \left( \frac{m}{\beta} \right)^m e^{-\frac{\beta^2}{2}} \left( \frac{m}{\beta} - \beta - Z \right)^{-m} & \text{for } Z < -\beta
-   \end{cases}
-   $$
+   \end{cases}$$
    where $Z = \frac{X - \mu}{\sigma}$, and $\mu$, $\sigma$, and $\beta$ are parameters defining the mean, standard deviation, and the tail exponent, respectively.
 
 2. **$h_s(Y)$**: The signal distribution in $Y$ follows a truncated **exponential distribution**:
-   $$
-   h_s(Y) = \lambda_s e^{-\lambda_s Y}, \quad \text{for } Y \in [0, 10]
-   $$
+   $$h_s(Y) = \lambda_s e^{-\lambda_s Y}, \quad \text{for } Y \in [0, 10]$$
    where $\lambda_s$ is the decay constant.
 
 ---
 
 ### **Background PDFs**
 1. **$g_b(X)$**: The background distribution in $X$ is uniform over the interval $[0, 5]$:
-   $$
-   g_b(X) = \frac{1}{5}, \quad \text{for } X \in [0, 5]
-   $$
+   $$g_b(X) = \frac{1}{5}, \quad \text{for } X \in [0, 5]$$
 2. **$h_b(Y)$**: The background distribution in $Y$ follows a truncated **normal distribution** with mean $\mu_b$ and standard deviation $\sigma_b$:
-   $$
-   h_b(Y) = \frac{1}{\sigma_b \sqrt{2\pi}} e^{-\frac{(Y - \mu_b)^2}{2\sigma_b^2}}, \quad \text{for } Y \in [0, 10]
-   $$
+   $$h_b(Y) = \frac{1}{\sigma_b \sqrt{2\pi}} e^{-\frac{(Y - \mu_b)^2}{2\sigma_b^2}}, \quad \text{for } Y \in [0, 10]$$
 
 ---
 
@@ -81,9 +73,7 @@ This file performs the **extended likelihood fit** using the **`iminuit`** libra
    - The **log-sum** of the joint PDF values over all samples.
 
    The negative log-likelihood to be minimized is:
-   $$
-   \mathcal{L} = -N_{\text{expected}} + N_{\text{observed}} \log(N_{\text{expected}}) + \sum_{i} \log f(X_i, Y_i)
-   $$
+   $$\mathcal{L} = -N_{\text{expected}} + N_{\text{observed}} \log(N_{\text{expected}}) + \sum_{i} \log f(X_i, Y_i)$$
 
 - **Key Function**:
    - `perform_fit`: Performs the extended likelihood fit using the observed samples, parameter bounds, and initial guesses.
@@ -126,9 +116,7 @@ The notebook demonstrates the complete analysis pipeline:
 ## **Mathematical Background of s-Weights**
 The s-weights method projects signal contributions into the $Y$-dimension:
 1. Perform a fit in $X$ to estimate the signal fraction and calculate s-weights for each sample:
-   $$
-   w_i = \frac{f \cdot g_s(X_i)}{f \cdot g_s(X_i) + (1 - f) \cdot g_b(X_i)}
-   $$
+   $$w_i = \frac{f \cdot g_s(X_i)}{f \cdot g_s(X_i) + (1 - f) \cdot g_b(X_i)}$$
 2. Use the s-weights as weights in a weighted likelihood fit to estimate the decay constant $\lambda_s$ in $Y$.
 
 ---
