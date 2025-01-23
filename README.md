@@ -32,13 +32,13 @@ where:
 
 ### **Signal PDFs**
 1. **$g_s(X)$**: A truncated **Crystal Ball distribution** with parameters $(\mu, \sigma, \beta, m)$, defined as:
-   $$
+   $
    g_s(X) = 
    \begin{cases} 
    e^{-Z^2/2} & \text{for } Z > -\beta \\
    \left( \frac{m}{\beta} \right)^m e^{-\beta^2 / 2} \left( \frac{m}{\beta} - \beta - Z \right)^{-m} & \text{for } Z \leq -\beta
    \end{cases}
-   $$
+   $
    where $Z = \frac{X - \mu}{\sigma}$.
 
 2. **$h_s(Y)$**: A truncated **exponential distribution**:
