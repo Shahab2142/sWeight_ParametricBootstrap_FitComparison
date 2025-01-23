@@ -20,13 +20,9 @@ $$
 where:
 - $f$: Fraction of the total density attributed to the **signal**.
 - $s(X, Y)$: Signal joint PDF, which factorizes as:
-  $$
-  s(X, Y) = g_s(X) \cdot h_s(Y)
-  $$
+  $s(X, Y) = g_s(X) \cdot h_s(Y)$
 - $b(X, Y)$: Background joint PDF, which factorizes as:
-  $$
-  b(X, Y) = g_b(X) \cdot h_b(Y)
-  $$
+  $b(X, Y) = g_b(X) \cdot h_b(Y)$
 
 ---
 
