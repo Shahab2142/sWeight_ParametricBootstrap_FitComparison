@@ -26,9 +26,9 @@ where:
 
 ### **Signal PDFs**
 1. **$g_s(X)$**: The signal distribution in $X$ follows a **Crystal Ball** function, which is a blend of a Gaussian and a power law tail.
-   For \( Z \geq -\beta \), $g_s(X) = \exp\left(-\frac{Z^2}{2}\right)$.
+   For $Z \geq -\beta$, $g_s(X) = \exp\left(-\frac{Z^2}{2}\right)$.
 
-   For \( Z < -\beta \), $g_s(X) = \left(\frac{m}{\beta}\right)^m \exp\left(-\frac{\beta^2}{2}\right) \left(\frac{m}{\beta} - \beta - Z\right)^{-m}$.
+   For $Z < -\beta$, $g_s(X) = \left(\frac{m}{\beta}\right)^m \exp\left(-\frac{\beta^2}{2}\right) \left(\frac{m}{\beta} - \beta - Z\right)^{-m}$.
 
 
 
